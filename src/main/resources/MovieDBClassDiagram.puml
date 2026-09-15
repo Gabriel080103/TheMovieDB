@@ -1,0 +1,95 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+MovieDTO "1" *-- "1" DetailsDTO
+MovieDTO "1" *-- "1" CreditsDTO
+DetailsDTO "1" *-- "*" GenreDTO
+DetailsDTO "1" *-- "*" ProductionCompanyDTO
+DetailsDTO "1" *-- "*" SpokenLanguageDTO
+CreditsDTO "1" *-- "*" CastMemberDTO
+CreditsDTO "1" *-- "*" CrewMemberDTO
+
+
+
+
+
+    class MovieDTO {
+        +DetailsDTO detailsDTO
+        +CreditsDTO creditsDTO
+    }
+
+    class DetailsDTO {
+        +boolean adult
+        +long budget
+        +List<GenreDTO> genres
+        +int id
+        +String imdb_id
+        +String[] originCountry
+        +String originalLanguage
+        +String orignalTitle
+        +String overview
+        +int popularity
+        +List<ProductionCompanyDTO> productionCompanies
+        +LocalDate releaseDate
+        +long revenue
+        +long runtime
+        +List<SpokenLanguage> spokenLanguages
+        +String status
+        +String tagline
+        +String title
+        +boolean video
+        +long voteAverage
+        +long voteCount
+    }
+
+    class GenreDTO {
+        +int id
+        +String name
+    }
+
+    class ProductionCompanyDTO {
+        +int id
+        +String name
+        +String originCountry
+    }
+
+    class SpokenLanguageDTO {
+        +String englishName
+        +String name
+    }
+
+    class CreditsDTO {
+        +int id
+        +List<CastMemberDTO> cast
+        +List<CrewMemberDTO> crew
+    }
+
+    class CastMemberDTO {
+        +boolean adult
+        +int boolean
+        +int id
+        +String knowForDepartment
+        +String name
+        +String originalName
+        +long popularity
+        +String profilePath
+        +int castId
+        +String character
+        +String creditId
+        +int order
+    }
+
+    class CrewMemberDTO {
+        +boolean adult
+        +int gender
+        +int id
+        +String knownForDepartment
+        +String name
+        +String originalName
+        +long popularity
+        +String profilePath
+        +String creditId
+        +String department
+        +String job
+    }
+@enduml
