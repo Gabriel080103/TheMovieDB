@@ -1,7 +1,10 @@
 package app.entities;
 
+import app.persistence.CastMemberMapper;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -22,8 +25,8 @@ public class Details {
     private boolean adult;
     private long budget;
 
-    @ElementCollection
-    private List<String> originCountry;
+    @JdbcTypeCode(SqlTypes.ARRAY)
+    private String[] originCountry;
 
     private String originalLanguage;
     private String originalTitle;
@@ -32,7 +35,7 @@ public class Details {
     private String overview;
 
     private double popularity;
-    private LocalDate releaseDate;
+    private String releaseDate;
     private long revenue;
     private long runtime;
     private String status;
@@ -44,12 +47,12 @@ public class Details {
 
     private String imdbId;
 
-    @OneToMany(mappedBy = "details")
+    @OneToMany(mappedBy = "details", cascade = CascadeType.ALL)
     private List<Genre> genres;
 
-    @OneToMany(mappedBy = "details")
+    @OneToMany(mappedBy = "details", cascade = CascadeType.ALL)
     private List<ProductionCompany> productionCompanies;
 
-    @OneToMany(mappedBy = "details")
+    @OneToMany(mappedBy = "details", cascade = CascadeType.ALL)
     private List<SpokenLanguage> spokenLanguages;
 }

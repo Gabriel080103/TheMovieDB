@@ -35,8 +35,4 @@ public class MovieService {
         movieDTO.setCreditsDTO(creditsDTO);
         return movieDTO;
     }
-
-//    public Movie convertDTOtoMovie(MovieDTO movieDTO) {
-//
-//    }
 }

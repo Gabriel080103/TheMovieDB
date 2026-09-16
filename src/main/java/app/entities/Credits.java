@@ -17,9 +17,14 @@ public class Credits {
     @Id
     private int id;
 
-    @OneToMany(mappedBy = "credits")
+    @OneToMany(mappedBy = "credits", cascade = CascadeType.ALL)
     private List<CastMember> cast;
 
-    @OneToMany(mappedBy = "credits")
+    @OneToMany(mappedBy = "credits", cascade = CascadeType.ALL)
     private List<CrewMember> crew;
+
+    public Credits(List<CrewMember> crew, List<CastMember> cast) {
+        this.cast = cast;
+        this.crew = crew;
+    }
 }

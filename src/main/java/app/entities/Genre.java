@@ -9,7 +9,7 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@ToString(exclude = "details")
 public class Genre {
 
     @Id
@@ -20,4 +20,9 @@ public class Genre {
     @ManyToOne
     @JoinColumn(name = "details_id")
     private Details details;
+
+    public Genre(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

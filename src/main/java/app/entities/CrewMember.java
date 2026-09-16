@@ -13,7 +13,10 @@ import lombok.*;
 public class CrewMember {
 
     @Id
-    private int id;
+    private String creditId;
+
+    private int personId;
+    
 
     private boolean adult;
     private int gender;
@@ -22,7 +25,6 @@ public class CrewMember {
     private String originalName;
     private double popularity;
     private String profilePath;
-    private String creditId;
     private String department;
     private String job;
 

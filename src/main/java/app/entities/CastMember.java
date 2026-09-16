@@ -13,8 +13,9 @@ import lombok.*;
 public class CastMember {
 
     @Id
-    private int id;
+    private String creditId;
 
+    private int personId;
     private boolean adult;
     private int gender;
     private String knownForDepartment;
@@ -24,7 +25,6 @@ public class CastMember {
     private String profilePath;
     private int castId;
     private String character;
-    private String creditId;
     private int castOrder;
 
     @ManyToOne

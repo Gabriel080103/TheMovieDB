@@ -20,8 +20,8 @@ public class CrewMemberDTO {
     @JsonProperty("gender")
     private int gender;
 
-    @JsonProperty("id")
-    private int id;
+    @JsonProperty("person_id")
+    private int personId;
 
     @JsonProperty("known_for_department")
     private String knownForDepartment;
