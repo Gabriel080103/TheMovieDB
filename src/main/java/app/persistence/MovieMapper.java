@@ -13,8 +13,4 @@ public class MovieMapper {
         movie.setCredits(creditsMapper.toEntity(dto.getCreditsDTO()));
         return movie;
     }
-
-    public MovieDTO toDTO(Movie entity) {
-        return null;
-    }
 }

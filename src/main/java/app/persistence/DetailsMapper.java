@@ -66,6 +66,4 @@ public class DetailsMapper {
         //
         return details;
     }
-
-
 }

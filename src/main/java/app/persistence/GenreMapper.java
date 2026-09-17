@@ -10,8 +10,4 @@ public class GenreMapper {
         genre.setName(dto.getName());
         return genre;
     }
-
-    public GenreDTO toDTO(Genre entity) {
-        return null;
-    }
 }
