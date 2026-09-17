@@ -44,7 +44,7 @@ public class Details {
 
     private String imdbId;
 
-    @OneToMany(mappedBy = "details", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "details")
     private List<Genre> genres;
 
     @OneToMany(mappedBy = "details", cascade = CascadeType.ALL)

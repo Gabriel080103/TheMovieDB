@@ -1,7 +1,9 @@
 package app;
 
 import app.DAOs.MovieDAO;
+import app.DTOs.MovieDTO;
 import app.config.HibernateConfig;
+import app.entities.Movie;
 import app.persistence.MovieMapper;
 import app.service.MovieService;
 import jakarta.persistence.EntityManagerFactory;
@@ -30,5 +32,17 @@ public class Main {
 
         // TEST : DTO LIST
 //        System.out.println(movieDTO.getDetailDTO().getGenres());
+
+
+        // TEST : DAO STRESS
+        MovieDTO movieDTO1 = movieService.createMovieDTO(139);
+        Movie movie1 = movieMapper.toEntity(movieDTO1);
+        movieDAO.save(movie1);
+
+        MovieDTO movieDTO2 = movieService.createMovieDTO(27);
+        Movie movie2 = movieMapper.toEntity(movieDTO2);
+        movieDAO.save(movie2);
+
+        movieDAO.delete(139);
     }
 }
