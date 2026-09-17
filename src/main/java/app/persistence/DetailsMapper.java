@@ -43,8 +43,6 @@ public class DetailsMapper {
             genreList.add(entityGenre);
         }
         details.setGenres(genreList);
-        System.out.println("Genres fra DTO: " + dto.getGenres());
-        System.out.println("Genres på entity: " + details.getGenres());
         //
         ProductionCompanyMapper productionCompanyMapper = new ProductionCompanyMapper();
         List<ProductionCompany> productionCompanyList = new ArrayList<>();
