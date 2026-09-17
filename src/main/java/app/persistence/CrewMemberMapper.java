@@ -1,9 +1,7 @@
 package app.persistence;
 
 import app.DTOs.CrewMemberDTO;
-import app.DTOs.GenreDTO;
 import app.entities.CrewMember;
-import app.entities.Genre;
 
 public class CrewMemberMapper {
 

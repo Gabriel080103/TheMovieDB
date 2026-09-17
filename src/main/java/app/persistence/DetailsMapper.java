@@ -1,6 +1,9 @@
 package app.persistence;
 
-import app.DTOs.*;
+import app.DTOs.DetailsDTO;
+import app.DTOs.GenreDTO;
+import app.DTOs.ProductionCompanyDTO;
+import app.DTOs.SpokenLanguageDTO;
 import app.entities.Details;
 import app.entities.Genre;
 import app.entities.ProductionCompany;
@@ -11,7 +14,7 @@ import java.util.List;
 
 public class DetailsMapper {
 
-    Details toEntity(DetailsDTO dto){
+    Details toEntity(DetailsDTO dto) {
         Details details = new Details();
         details.setId(dto.getId());
         details.setAdult(dto.isAdult());
@@ -40,8 +43,8 @@ public class DetailsMapper {
             genreList.add(entityGenre);
         }
         details.setGenres(genreList);
-            System.out.println("Genres fra DTO: " + dto.getGenres());
-            System.out.println("Genres på entity: " + details.getGenres());
+        System.out.println("Genres fra DTO: " + dto.getGenres());
+        System.out.println("Genres på entity: " + details.getGenres());
         //
         ProductionCompanyMapper productionCompanyMapper = new ProductionCompanyMapper();
         List<ProductionCompany> productionCompanyList = new ArrayList<>();

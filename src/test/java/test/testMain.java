@@ -1,4 +1,4 @@
-package app;
+package test;
 
 import app.DAOs.MovieDAO;
 import app.config.HibernateConfig;
@@ -8,7 +8,7 @@ import jakarta.persistence.EntityManagerFactory;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+public class testMain {
     public static EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
 
     static void main() {

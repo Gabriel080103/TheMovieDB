@@ -16,7 +16,7 @@ public class CrewMember {
     private String creditId;
 
     private int personId;
-    
+
 
     private boolean adult;
     private int gender;

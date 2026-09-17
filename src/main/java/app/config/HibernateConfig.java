@@ -9,7 +9,8 @@ public final class HibernateConfig {
 
     private static volatile EntityManagerFactory emf;
 
-    private HibernateConfig() {}
+    private HibernateConfig() {
+    }
 
     public static EntityManagerFactory getEntityManagerFactory() {
         if (emf == null) {

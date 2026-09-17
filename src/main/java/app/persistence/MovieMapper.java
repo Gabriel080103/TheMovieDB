@@ -1,8 +1,6 @@
 package app.persistence;
 
-import app.DTOs.GenreDTO;
 import app.DTOs.MovieDTO;
-import app.entities.Genre;
 import app.entities.Movie;
 
 public class MovieMapper {

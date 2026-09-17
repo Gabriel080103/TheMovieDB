@@ -21,13 +21,13 @@ public class CreditsMapper {
         List<CastMember> castMemberList = new ArrayList<>();
         List<CrewMember> crewMemberList = new ArrayList<>();
 
-        for (CastMemberDTO castMemberDTO : dto.getCast()){
+        for (CastMemberDTO castMemberDTO : dto.getCast()) {
             CastMember castMemberEntity = castMemberMapper.toEntity(castMemberDTO);
             castMemberEntity.setCredits(credits);
             castMemberList.add(castMemberEntity);
         }
         credits.setCast(castMemberList);
-        for (CrewMemberDTO crewMemberDTO : dto.getCrew()){
+        for (CrewMemberDTO crewMemberDTO : dto.getCrew()) {
             CrewMember crewMemberEntity = crewMemberMapper.toEntity(crewMemberDTO);
             crewMemberEntity.setCredits(credits);
             crewMemberList.add(crewMemberEntity);

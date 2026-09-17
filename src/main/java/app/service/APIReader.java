@@ -46,7 +46,7 @@ public class APIReader {
         try {
             JsonNode node = objectMapper.readTree(new URI(url).toURL());
 
-            for(String field : fields) {
+            for (String field : fields) {
                 node = node.get(field);
             }
 

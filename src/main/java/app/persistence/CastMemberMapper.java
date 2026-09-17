@@ -5,7 +5,7 @@ import app.entities.CastMember;
 
 public class CastMemberMapper {
 
-    public CastMember toEntity(CastMemberDTO dto){
+    public CastMember toEntity(CastMemberDTO dto) {
         CastMember castMember = new CastMember();
         castMember.setCreditId(dto.getCreditId());
         castMember.setPersonId(dto.getPersonId());
@@ -22,8 +22,8 @@ public class CastMemberMapper {
         return castMember;
     }
 
-    CastMemberDTO toDTO(CastMember entity){
-       return null;
+    CastMemberDTO toDTO(CastMember entity) {
+        return null;
     }
 }
 

@@ -3,15 +3,13 @@ package app.service;
 import app.DTOs.CreditsDTO;
 import app.DTOs.DetailsDTO;
 import app.DTOs.MovieDTO;
-import app.entities.Details;
-import app.entities.Movie;
 
 public class MovieService {
     // APIKEY
-    private static String apiKey = System.getenv("api_key");
+    private static final String apiKey = System.getenv("api_key");
 
     //APIReader instance
-    private static APIReader apiReader = new APIReader();
+    private static final APIReader apiReader = new APIReader();
 
     // API URLs - Named after operation:
     private static final String getMovieDetailsURL = "https://api.themoviedb.org/3/movie/MOVIEID?api_key=" + apiKey;

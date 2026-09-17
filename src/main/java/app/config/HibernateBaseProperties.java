@@ -4,7 +4,8 @@ import java.util.Properties;
 
 final class HibernateBaseProperties {
 
-    private HibernateBaseProperties() {}
+    private HibernateBaseProperties() {
+    }
 
     static Properties createBase() {
         Properties props = new Properties();
