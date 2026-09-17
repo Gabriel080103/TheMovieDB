@@ -35,8 +35,4 @@ public class CreditsMapper {
         credits.setCrew(crewMemberList);
         return credits;
     }
-
-    public CreditsDTO toDTO(Credits entity) {
-        return null;
-    }
 }

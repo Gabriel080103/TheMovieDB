@@ -10,9 +10,5 @@ public class SpokenLanguageMapper {
         spokenLanguage.setName(dto.getName());
         return spokenLanguage;
     }
-
-    public SpokenLanguageDTO toDTO(SpokenLanguage entity) {
-        return null;
-    }
 }
 

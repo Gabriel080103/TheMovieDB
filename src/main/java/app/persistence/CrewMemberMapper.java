@@ -19,8 +19,4 @@ public class CrewMemberMapper {
         crewMember.setJob(dto.getJob());
         return crewMember;
     }
-
-    public CrewMemberDTO toDTO(CrewMember entity) {
-        return null;
-    }
 }

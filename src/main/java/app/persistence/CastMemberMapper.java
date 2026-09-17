@@ -21,9 +21,5 @@ public class CastMemberMapper {
         castMember.setCastOrder(dto.getOrder());
         return castMember;
     }
-
-    CastMemberDTO toDTO(CastMember entity) {
-        return null;
-    }
 }
 

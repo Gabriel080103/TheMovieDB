@@ -15,8 +15,4 @@ public class ProductionCompanyMapper {
         productionCompany.setOriginCountry(dto.getOriginCountry());
         return productionCompany;
     }
-
-    public GenreDTO toDTO(Genre entity) {
-        return null;
-    }
 }
