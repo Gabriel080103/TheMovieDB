@@ -41,7 +41,6 @@ public class APIReader {
     }
 
     // Makes a GET-Request and converts the JSON into a Java object
-
     public <T> T getWithJackson(String url, Class<T> type, String... fields) {
         try {
             JsonNode node = objectMapper.readTree(new URI(url).toURL());

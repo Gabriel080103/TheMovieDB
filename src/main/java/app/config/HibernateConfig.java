@@ -35,6 +35,14 @@ public final class HibernateConfig {
             setDevProperties(props);
         }
         return props;
+
+//        if (isIntegrationTest) {
+//            props = setTestProperties(props);
+//        } else if (System.getenv("DEPLOYED") != null) {
+//            setDeployedProperties(props);
+//        } else {
+//            props = setDevProperties(props);
+//        }
     }
 
     private static void setDeployedProperties(Properties props) {
@@ -52,5 +60,17 @@ public final class HibernateConfig {
         props.put("hibernate.connection.url", "jdbc:postgresql://localhost:5432/" + dbName);
         props.put("hibernate.connection.username", username);
         props.put("hibernate.connection.password", password);
+    }
+
+    private static Properties setTestProperties(Properties props) {
+//        props.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+        props.put("hibernate.connection.driver_class", "org.testcontainers.jdbc.ContainerDatabaseDriver");
+        props.put("hibernate.connection.url", "jdbc:tc:postgresql:15.3-alpine3.18:///test_db");
+        props.put("hibernate.connection.username", "postgres");
+        props.put("hibernate.connection.password", "postgres");
+        props.put("hibernate.archive.autodetection", "class");
+        props.put("hibernate.show_sql", "true");
+        props.put("hibernate.hbm2ddl.auto", "create-drop");
+        return props;
     }
 }

@@ -14,6 +14,7 @@ import java.util.List;
 public class CreditsMapper {
 
     public Credits toEntity(CreditsDTO dto) {
+        System.out.println("Creating Credits: " + dto.getId());
         Credits credits = new Credits();
         credits.setId(dto.getId());
         CastMemberMapper castMemberMapper = new CastMemberMapper();
