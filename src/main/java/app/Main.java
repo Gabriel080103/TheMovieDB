@@ -1,48 +1,47 @@
+
 package app;
 
-import app.DAOs.MovieDAO;
-import app.DTOs.MovieDTO;
 import app.config.HibernateConfig;
-import app.entities.Movie;
-import app.persistence.MovieMapper;
+import app.DAOs.MovieDAO;
 import app.service.MovieService;
 import jakarta.persistence.EntityManagerFactory;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
 
-    static void main() {
-        // Instances :
-        MovieService movieService = new MovieService();
-        MovieMapper movieMapper = new MovieMapper();
-        MovieDAO movieDAO = new MovieDAO(emf);
+    public static void main(String[] args) {
+        EntityManagerFactory emf = null;
 
-        // TEST : get Movie Details
-//        System.out.println(movieService.getMovieDetails("139"));
+        try {
+            System.out.println("Starting MovieDB backend...");
 
-        // TEST : get Movie Credits
-//        System.out.println(movieService.getMovieCredits("139"));
+            // Initialize Hibernate and the database connection
+            emf = HibernateConfig.getEntityManagerFactory();
 
-        // TEST : get Movie and make a MovieDTO then convert it to an entity and upload it to the DB
-//        MovieDTO movieDTO = movieService.createMovieDTO("139");
-//        Movie movie = movieMapper.toEntity(movieDTO);
-//        movieDAO.save(movie);
+            // Initialize existing backend components
+            MovieDAO movieDAO = new MovieDAO(emf);
+            MovieService movieService = new MovieService();
 
-        // TEST : DTO LIST
-//        System.out.println(movieDTO.getDetailDTO().getGenres());
+            System.out.println("Database connection initialized.");
+            System.out.println("MovieDAO initialized.");
+            System.out.println("MovieService initialized.");
+            System.out.println("MovieDB backend started successfully.");
 
+            // Keep the backend process alive
+            Thread.currentThread().join();
 
-        // TEST : DAO STRESS
-//        MovieDTO movieDTO1 = movieService.createMovieDTO(139);
-//        Movie movie1 = movieMapper.toEntity(movieDTO1);
-//        movieDAO.save(movie1);
-//
-//        MovieDTO movieDTO2 = movieService.createMovieDTO(27);
-//        Movie movie2 = movieMapper.toEntity(movieDTO2);
-//        movieDAO.save(movie2);
-//
-//        movieDAO.delete(139);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.out.println("MovieDB backend shutting down.");
+
+        } catch (Exception e) {
+            System.err.println("Failed to start MovieDB backend.");
+            e.printStackTrace();
+            System.exit(1);
+
+        } finally {
+            if (emf != null && !Thread.currentThread().isInterrupted()) {
+                emf.close();
+            }
+        }
     }
 }
