@@ -35,14 +35,14 @@ public class Main {
 
 
         // TEST : DAO STRESS
-        MovieDTO movieDTO1 = movieService.createMovieDTO(139);
-        Movie movie1 = movieMapper.toEntity(movieDTO1);
-        movieDAO.save(movie1);
-
-        MovieDTO movieDTO2 = movieService.createMovieDTO(27);
-        Movie movie2 = movieMapper.toEntity(movieDTO2);
-        movieDAO.save(movie2);
-
-        movieDAO.delete(139);
+//        MovieDTO movieDTO1 = movieService.createMovieDTO(139);
+//        Movie movie1 = movieMapper.toEntity(movieDTO1);
+//        movieDAO.save(movie1);
+//
+//        MovieDTO movieDTO2 = movieService.createMovieDTO(27);
+//        Movie movie2 = movieMapper.toEntity(movieDTO2);
+//        movieDAO.save(movie2);
+//
+//        movieDAO.delete(139);
     }
 }
