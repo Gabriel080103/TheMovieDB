@@ -1,3 +1,4 @@
+
 package app;
 
 import app.config.HibernateConfig;
@@ -33,8 +34,11 @@ public class Main {
                     }
                     """.getBytes(StandardCharsets.UTF_8);
 
-            exchange.getResponseHeaders()
-                    .set("Content-Type", "application/json; charset=UTF-8");
+            exchange.getResponseHeaders().set(
+                    "Content-Type",
+                    "application/json; charset=UTF-8"
+            );
+
             exchange.sendResponseHeaders(200, response.length);
 
             try (OutputStream os = exchange.getResponseBody()) {
@@ -45,6 +49,8 @@ public class Main {
         server.setExecutor(null);
         server.start();
 
-        System.out.println("MovieDB HTTP server running on port 7070");
+        System.out.println(
+                "MovieDB HTTP server running on port 7070"
+        );
     }
 }
