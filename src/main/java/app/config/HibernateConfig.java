@@ -1,4 +1,3 @@
-
 package app.config;
 
 import app.utils.Utils;
@@ -122,9 +121,12 @@ public class HibernateConfig {
     private static EntityManagerFactory createEntityManagerFactory(
             Properties props) {
 
-        return new Configuration()
-                .addProperties(props)
-                .buildSessionFactory();
+        Configuration configuration = new Configuration()
+                .addProperties(props);
+
+        EntityRegistry.registerEntities(configuration);
+
+        return configuration.buildSessionFactory();
     }
 
     public static synchronized void closeEntityManagerFactory() {
