@@ -30,7 +30,7 @@ public class Main {
                     {
                       "status": "ok",
                       "service": "MovieDB",
-                      "message": "Backend is running"
+                      "message": "Backend is running frfr"
                     }
                     """.getBytes(StandardCharsets.UTF_8);
 
